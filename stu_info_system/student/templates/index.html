@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mr.Yao</title>
+<style>
+html,body{
+    margin: 0;
+    padding: 0;
+}
+.main {
+    width: 300px;
+    margin: 10% 10%;
+    border: 2px double black;
+    border-radius: 10px;
+}
+.navigation {
+    list-style: none;
+}
+.navigation li {
+	margin-top: 30px;
+}
+.navigation li a {
+    padding: 1px;
+    text-decoration: none;
+    color: white;
+    border: 2px dotted grey;
+}
+.navigation a:hover {
+    background: grey;
+}
+.wall{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+div#background{
+background: url("{% static 'preview.jpg' %}")no-repeat;
+    background-size: cover;
+}
+
+</style>
+</head>	
+<body>
+<div id="background" class="wall">
+    <div class="main">    
+        <ul class="navigation">
+	   <li><a href="#">首页</a></li>
+        <li><a href="#">新生信息输入</a></li>
+        <li><a href="#">教务信息输入</a></li>
+        <li><a href="slogin/">个人信息查询修改</a></li>
+    </div>
+</ul>
+<div>
+</body>
+</html>
