@@ -1,48 +1,66 @@
+{% load static %}
 <!DOCTYPE html>
 <head>
 	<meta charset="utf-8">
 	<title>学生信息</title>
 	<style>
-	.teb {
-		border-collapse: collapse;
+	html,body{
+	    margin: 0;
+	    padding: 0;
 	}
-
-	.teb tr {
-		margin: 4px 10px;
-		text-align: center;
-		border: 2px solid #999;
-		border-radius: 10px;
+	.wall{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
 	}
-
-	.teb td {
-		padding: 4px 10px;
+	div#background{
+		background: url("{% static 'preview.jpg' %}")no-repeat;
+	    background-size: cover;
+	    text-align: center;
+	}
+	.main {
 		text-align: center;
+	}
+	table td {
+		color: #fff;
+		text-align: left;
+		padding-right: 15px;
+	}
+	.wall h3 a {
+		text-decoration: none;
+		color: #fff;
 	}
 	</style>
 </head>
 <body>
-<h3><a href="/home/">首页</a></h3>
-<h3><a href="/home/slogin/">注销</a></h3>
-<table class="teb">
-	<tr>
-		<td>学号</td>
-		<td>姓名</td>
-		<td>密码</td>
-		<td>性别</td>
-		<td>班级</td>
-		<td>所属院系</td>
-		<td>生日</td>
-		<td>籍贯</td>
-	</tr>
-	<tr>
-		<td>{{ stu.STUDENTID }}</td>
-		<td>{{ stu.NAME_STU }}</td>
-		<td>{{ stu.PASSWD }}</td>
-		<td>{{ stu.SEX }}</td>
-		<td>{{ stu.ID_CLA }}</td>
-		<td>{{ stu.ID_DEP }}</td>
-		<td>{{ stu.BIRTHDAY }}</td>
-		<td>{{ stu.NATIVE_PLACE }}</td>
-</table>
+<div id="background" class="wall">
+	<h3><a href="/home/">首页 | </a><a href="/home/slogin/">注销 | </a><a href="/home/modify/">修改</a></h3>
+	<div class="main">
+		<table align="center">
+			<tr>
+				<td>学号</td>
+				<td>姓名</td>
+				<td>密码</td>
+				<td>性别</td>
+				<td>班级</td>
+				<td>所属院系</td>
+				<td>生日</td>
+				<td>籍贯</td>
+			</tr>
+			<tr>
+				<td>{{ stu.STUDENTID }}</td>
+				<td>{{ stu.NAME_STU }}</td>
+				<td>{{ stu.PASSWD }}</td>
+				<td>{{ stu.SEX }}</td>
+				<td>{{ stu.ID_CLA }}</td>
+				<td>{{ stu.ID_DEP }}</td>
+				<td>{{ stu.BIRTHDAY }}</td>
+				<td>{{ stu.NATIVE_PLACE }}</td>
+			</tr>
+		</table>
+	</div>
+</div>
 </body>
 <html>
