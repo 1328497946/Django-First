@@ -25,5 +25,6 @@ pip3 install mysqlclient
 ## 2.创建项目  
 >django startproject stu/_info/_system  
 >stu/_info/_system为项目名称，桌面上新建的stu/_info/_system文件夹就是工程的文件夹  
-文件夹结构如下： 
-![结构截图](picture-02.png)  
+文件夹结构如下:  
+![结构截图](picture-02.png)
+
