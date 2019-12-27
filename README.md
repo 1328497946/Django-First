@@ -20,6 +20,10 @@ pip3 install pymysql
 ```python
 pip3 install mysqlclient
 ```
+* 安装django-suit  
+```
+pip3 install django-suit
+```
 在安装mysqlclient的时候，出现了mysql.conf文件缺失的错误，网上找到的解决办法是安装mysql-devel组件，但是在deepin上找不到这个，安装了下面这些包解决了问题[屏幕截图](picture-01.png)  
 # 测试APP  
 APP使用mysql数据库，先在mysql中创建一个名为student的database，设置默认的编码为utf8，创建数据库的命令如下：  
