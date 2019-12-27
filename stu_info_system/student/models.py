@@ -8,8 +8,9 @@ class CHANGE_CODE(models.Model):
 		return self.DESCRIPTION
 
 	class Meta:
+		verbose_name = "变更代码"
 		db_table = "CHANGE_CODE"
-		verbose_name_plural = "学籍变更代码表"
+		verbose_name_plural = "学籍变更代码"
 
 
 class REWARD_CODE(models.Model):
@@ -21,12 +22,13 @@ class REWARD_CODE(models.Model):
 
 	
 	class Meta:
+		verbose_name = "奖项代码"
 		db_table = "REWARD_CODE"
-		verbose_name_plural = "奖励级别代码表"
+		verbose_name_plural = "奖励级别代码"
 
 
 class PUNISH_CODE(models.Model):
-	CODE = models.IntegerField(default=0, verbose_name="处罚级别代码")
+	CODE = models.IntegerField(verbose_name="处罚级别代码")
 	DESCRIPTION = models.CharField(max_length=20, verbose_name="处罚级别说明")
 
 	def __str__(self):
@@ -34,8 +36,9 @@ class PUNISH_CODE(models.Model):
 
 
 	class Meta:
+		verbose_name = "处罚代码"
 		db_table = "PUNISH_CODE"
-		verbose_name_plural = "处罚级别代码表"
+		verbose_name_plural = "处罚级别代码"
 
 
 
@@ -48,8 +51,9 @@ class DEPARTMENT(models.Model):
 
 
 	class Meta:
+		verbose_name = "院系"
 		db_table = "DEPARTMENT"
-		verbose_name_plural = "院系信息表" 
+		verbose_name_plural = "院系信息" 
 
 
 class STUDENT(models.Model):
@@ -68,8 +72,9 @@ class STUDENT(models.Model):
 		return self.NAME_STU
 
 	class Meta:
+		verbose_name = "学生"
 		db_table = "STUDENT"
-		verbose_name_plural = "学生个人信息表"
+		verbose_name_plural = "学生个人信息"
 
 
 class CLASS(models.Model):
@@ -81,21 +86,26 @@ class CLASS(models.Model):
 
 	
 	class Meta:
+		verbose_name = "班级"
 		db_table = "CLASS"
-		verbose_name_plural = "班级信息表"
+		verbose_name_plural = "班级信息"
 
 	
 class CHANGE(models.Model):
 	ID_CHA = models.IntegerField(default=0, verbose_name="记录号", primary_key=True)
-	STUDENTID = models.ForeignKey("STUDENT", on_delete=models.CASCADE, verbose_name="学号")
+	STUDENTID = models.ForeignKey("STUDENT", on_delete=models.CASCADE, verbose_name="学生")
 	CHANGE = models.ForeignKey("CHANGE_CODE", on_delete=models.CASCADE, verbose_name="变更代码")
 	REC_TIME = models.DateField(verbose_name="记录时间", default="")
 	DESCRIPTION = models.CharField(max_length=200, verbose_name="描述")
 
+	def __str__(self):
+		return str(self.STUDENTID)
+
 
 	class Meta:
+		verbose_name = "学生"
 		db_table = 'CHANGE'
-		verbose_name_plural = "学籍信息变更表"
+		verbose_name_plural = "学籍信息变更"
 
 class REWARD(models.Model):
 	ID_REW = models.IntegerField(default=0, verbose_name="记录号", primary_key=True)
@@ -104,10 +114,14 @@ class REWARD(models.Model):
 	REC_TIME = models.DateField(verbose_name="记录时间", default="")
 	DESCRIPTION = models.CharField(max_length=200, verbose_name="描述")
 
+	def __str__(self):
+		return str(self.STUDENTID)
+
 
 	class Meta:
+		verbose_name = "学生"
 		db_table = "REWARD"
-		verbose_name_plural = "奖励记录信息表"
+		verbose_name_plural = "奖励记录信息"
 
 
 class PUNISHMENT(models.Model):
@@ -118,8 +132,12 @@ class PUNISHMENT(models.Model):
 	REC_TIME = models.DateField(verbose_name="记录时间", default="")
 	DESCRIPTION = models.CharField(max_length=200, verbose_name="描述")
 
+	def __str__(self):
+		return str(self.STUDENTID)
+
 
 	class Meta:
+		verbose_name = "学生"
 		db_table = "PUNISHMENT"
-		verbose_name_plural = "处罚记录信息表"
+		verbose_name_plural = "处罚记录信息"
 # Create your models here.

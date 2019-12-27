@@ -31,6 +31,7 @@ ALLOWED_HOSTS = ['127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,7 +122,17 @@ USE_L10N = True
 
 USE_TZ = True
 
+DATETIME_FORMAT = "Y-m-d H:i:s"
 
+DATE_FORMAT = "Y-m-d"
+
+SUIT_CONFIG = {
+    'ADMIN_NAME': "学生信息管理系统",
+    'MENU': ({
+        'label': '用户',
+        'models': ('UserProfile', )},
+    ),
+}
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 

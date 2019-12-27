@@ -4,91 +4,92 @@ from .models import *
 
 class STUDENT_Admin(admin.ModelAdmin):
 	list_display = [
-		'STUDENTID',
-		'NAME_STU',
-		'PASSWD',
-		'SEX',
-		'ID_CLA',
-		'ID_DEP',
-		'BIRTHDAY',
-		'NATIVE_PLACE'
+	'STUDENTID',
+	'NAME_STU',
+	'PASSWD',
+	'SEX',
+	'ID_CLA',
+	'ID_DEP',
+	'BIRTHDAY',
+	'NATIVE_PLACE'
 	]
-	search_fields = [('STUDENTID'), ]
+	list_filter = ('ID_CLA', 'ID_DEP')
+	search_fields = ('STUDENTID', )
 
 
 class CHANGE_Admin(admin.ModelAdmin):
 	list_display = [
-		'ID_CHA',
-		'STUDENTID',
-		'CHANGE',
-		'REC_TIME',
-		'DESCRIPTION'
+	'ID_CHA',
+	'STUDENTID',
+	'CHANGE',
+	'REC_TIME',
+	'DESCRIPTION'
 	]
-	search_fields = [('STUDENTID'),('CHA_ID'),]
+	search_fields = ('STUDENTID', 'CHA_ID')
 
 
 class REWARD_Admin(admin.ModelAdmin):
 	list_display = [
-		'ID_REW',
-		'STUDENTID',
-		'LEVELS',
-		'REC_TIME',
-		'DESCRIPTION'
-		]
-	search_fields = [('STUDENTID'), ('ID_REW')]
+	'ID_REW',
+	'STUDENTID',
+	'LEVELS',
+	'REC_TIME',
+	'DESCRIPTION'
+	]
+	search_fields = ('STUDENTID', 'ID_REW')
 
 
 class PUNISHMENT_Admin(admin.ModelAdmin):
 	list_display = [
-		'ID_PUN',
-		'STUDENTID',
-		'LEVELS',
-		'REC_TIME',
-		'ENABLE',
-		'DESCRIPTION'
+	'ID_PUN',
+	'STUDENTID',
+	'LEVELS',
+	'REC_TIME',
+	'ENABLE',
+	'DESCRIPTION'
 	]
-	search_fields = [('STUDENTID'), ('ID_PUN')]
+	search_fields = ('STUDENTID', 'ID_PUN')
 
 
 class DEPARTMENT_Admin(admin.ModelAdmin):
 	list_display = [
-		'ID_DEP',
-		'NAME_DEP'
+	'ID_DEP',
+	'NAME_DEP'
 	]
-	search_fields = [('ID_DEP')]
+	search_fields = ('ID_DEP', )
 
 
 class CLASS_Admin(admin.ModelAdmin):
 	list_display = [
-		'ID_CLA',
-		'NAME_CLA',
-		'NAME_DEP',
+	'ID_CLA',
+	'NAME_CLA',
+	'NAME_DEP',
 	]
-	search_fields = [('ID_CLA')]
+	search_fields = ('ID_CLA', )
 
 
 class CHANGE_CODE_Admin(admin.ModelAdmin):
 	list_display = [
-		'CODE',
-		'DESCRIPTION'
+	'CODE',
+	'DESCRIPTION'
 	]
-	search_fields = [('CODE')]
+	search_fields = ('CODE', )
 
 
 class REWARD_CODE_Admin(admin.ModelAdmin):
 	list_display = [
-		'CODE',
-		'DESCRIPTION'
+	'CODE',
+	'DESCRIPTION'
 	]
-	search_fields = [('CODE')]
+	search_fields = ('CODE', )
 
 
 class PUNISH_CODE_Admin(admin.ModelAdmin):
 	list_display = [
-		'CODE',
-		'DESCRIPTION'
+	'CODE',
+	'DESCRIPTION'
 	]
-	search_fields = [('CODE')]
+	search_fields = ('CODE', )
 
 admin.site.register(STUDENT, STUDENT_Admin)
 admin.site.register(CHANGE, CHANGE_Admin)

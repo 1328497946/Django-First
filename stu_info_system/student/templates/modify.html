@@ -1,1 +1,32 @@
-
+{% load static %}
+<!DOCTYPE html>
+<head>
+	<meta charset="utf-8">
+	<title>学生信息</title>
+	<style>
+	html,body{
+	    margin: 0;
+	    padding: 0;
+	}
+	.wall{
+	    position: absolute;
+	    top: 0;
+	    left: 0;
+	    bottom: 0;
+	    right: 0;
+	}
+	div#background{
+		background: url("{% static 'preview.jpg' %}")no-repeat;
+	    background-size: cover;
+	    text-align: center;
+	}
+	</style>
+</head>
+<body>
+<div id="background" class="wall">
+	<div class="main">
+		
+	</div>
+</div>
+</body>
+<html>
