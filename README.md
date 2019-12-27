@@ -21,21 +21,15 @@ pip3 install pymysql
 pip3 install mysqlclient
 ```
 在安装mysqlclient的时候，出现了mysql.conf文件缺失的错误，网上找到的解决办法是安装mysql-devel组件，但是在deepin上找不到这个，安装了下面这些包解决了问题  
-![屏幕截图](picture-01.png)  
-## 2.创建项目  
-django startproject stu/_info/_system  
-stu/_info/_system为项目名称，桌面上新建的stu/_info/_system文件夹就是工程的文件夹  
-文件夹结构如下:  
-![结构截图](picture-02.png)  
-## 3.创建(学生信息管理)APP
-进入stu/_info/_system文件夹  
-```python
-cd stu/_info/_system
+[屏幕截图](picture-01.png) 
+# 测试APP  
+APP使用mysql数据库，先在mysql中创建一个名为student的database，设置默认的编码为utf8，创建数据库的命令如下：  
 ```
-创建名为stuent的APP  
-```python
-python3 manage.py startapp student
+create database student default character set utf8;
 ```
-查看目录结构  
-![目录结构](picture-03.png)  
-
+然后进入stu/_info/_system文件夹创建models并同步数据库  
+```
+cd stu_info_system
+python3 manage.py migrations student
+python3 manage.py migrate
+```
